@@ -43,7 +43,7 @@ pred = """{
 }
 """
 
-# dummy redis process, simply appends "-done" to incoming data
+# dummy redis process, iterates through labels in returned opex json string
 r = redis.Redis()
 p = r.pubsub()
 def anon_handler(message):
