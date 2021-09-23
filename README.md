@@ -2,6 +2,14 @@
 Plugins for the shallowflow workflow engine that allows making decisions on 
 whether to keep or discard video frames via Redis backend.
 
+## Installation
+
+Install via pip:
+
+```commandline
+pip install "git+https://github.com/waikato-datamining/shallowflow-vfs.git"
+```
+
 ## Conditions
 
 * `shallowflow.vfs.conditions.OpexLabelPresent`
