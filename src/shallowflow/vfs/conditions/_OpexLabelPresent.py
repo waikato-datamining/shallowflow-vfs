@@ -34,6 +34,8 @@ class OpexLabelPresent(AbstractBooleanCondition):
         """
         if isinstance(o, str):
             preds = ObjectPredictions.from_json_string(o)
+        elif isinstance(o, bytes):
+            preds = ObjectPredictions.from_json_string(o.decode())
         else:
             raise Exception("Data must be an OPEX JSON string!")
 
