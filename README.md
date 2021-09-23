@@ -1,6 +1,6 @@
 # shallowflow-vfs
 Plugins for the shallowflow workflow engine that allows making decisions on 
-whether to keep or discard video frames.
+whether to keep or discard video frames via Redis backend.
 
 ## Conditions
 
