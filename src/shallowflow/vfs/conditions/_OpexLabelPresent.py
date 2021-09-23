@@ -23,6 +23,7 @@ class OpexLabelPresent(AbstractBooleanCondition):
         """
         super()._define_options()
         self._option_manager.add(Option("label", str, "", "Checks whether the specified label is present in the OPEX prediction output"))
+        self._option_manager.add(Option("min_score", float, 0.0, "The minimum score the objects must have"))
 
     def _do_evaluate(self, o):
         """
@@ -40,9 +41,10 @@ class OpexLabelPresent(AbstractBooleanCondition):
             raise Exception("Data must be an OPEX JSON string!")
 
         label = self.get("label")
+        min_score = self.get("min_score")
         result = False
         for obj in preds.objects:
-            if obj.label == label:
+            if (obj.label == label) and (obj.score >= min_score):
                 result = True
                 break
         return result
