@@ -6,7 +6,7 @@ whether to keep or discard video frames via Redis backend.
 
 Install via pip:
 
-```commandline
+```bash
 pip install "git+https://github.com/waikato-datamining/shallowflow-vfs.git"
 ```
 
