@@ -3,6 +3,7 @@ PyPi
 
 Preparation:
 
+* update class documentation in `../shallowflow-doc` 
 * increment version in `setup.py`
 * add new changelog section in `CHANGES.rst`
 * commit/push all changes
