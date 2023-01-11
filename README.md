@@ -10,9 +10,9 @@ Install via pip:
 pip install "git+https://github.com/waikato-datamining/shallowflow-vfs.git"
 ```
 
-## Conditions
+## Classes
 
-* `shallowflow.vfs.conditions.OpexLabelPresent`
+[Documentation](https://github.com/waikato-datamining/shallowflow-doc/tree/main/classdoc/vfs/README.md)
 
 
 ## Examples
