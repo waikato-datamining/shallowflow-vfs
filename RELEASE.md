@@ -26,7 +26,7 @@ Steps:
 
 * start new release (version: `vX.Y.Z`)
 * enter release notes, i.e., significant changes since last release
-* upload `shallowflow-vfs-X.Y.Z.tar.gz` previously generated with `setyp.py`
+* upload `shallowflow-vfs-X.Y.Z.tar.gz` previously generated with `setup.py`
 * publish
 
 
