@@ -6,7 +6,7 @@ from shallowflow.base.controls import Flow, Tee, Trigger, ConditionalTee, run_fl
 from shallowflow.base.sources import FileSupplier, GetVariable
 from shallowflow.base.transformers import SetVariable
 from shallowflow.base.sinks import ConsoleOutput
-from shallowflow.cv2.transformers import VideoFileReader
+from shallowflow.cv2.transformers import VideoFileReader, IMAGE_OUTPUT_JPG
 from shallowflow.cv2.sinks import VideoWriter
 from shallowflow.redis.standalones import RedisConnection
 from shallowflow.redis.transformers import RedisTransformer
@@ -53,12 +53,12 @@ def anon_handler(message):
         count = 0
     r.publish(channel_in, pred % labels[count])
 p.psubscribe(**{channel_out: anon_handler})
-p.run_in_thread(sleep_time=0.001)
+p.run_in_thread(sleep_time=0.01)
 
 flow = Flow().manage([
     RedisConnection(),
     FileSupplier({"files": [File("./data/track_book.mjpeg")]}),
-    VideoFileReader({"nth_frame": 2, "max_frames": 10}),  # extract every 2nd frame, but only 10 at most
+    VideoFileReader({"nth_frame": 2, "max_frames": 10, "image_output": IMAGE_OUTPUT_JPG}),  # extract every 2nd frame, but only 10 at most, forwards them as JPG
     Tee().manage([
         SetVariable({"var_name": "keep", "var_value": "False"}),
         RedisTransformer({"action": BroadcastAndListen({"channel_out": channel_out, "channel_in": channel_in})}),

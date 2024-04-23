@@ -1,6 +1,6 @@
 from opex import ObjectPredictions
 from shallowflow.api.condition import AbstractBooleanCondition
-from shallowflow.api.config import Option
+from coed.config import Option
 
 
 class OpexLabelPresent(AbstractBooleanCondition):
