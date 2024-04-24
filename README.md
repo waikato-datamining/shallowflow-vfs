@@ -12,7 +12,7 @@ pip install "git+https://github.com/waikato-datamining/shallowflow-vfs.git"
 
 ## Classes
 
-[Documentation](https://github.com/waikato-datamining/shallowflow-doc/tree/main/classdoc/vfs/README.md)
+[Documentation](docs/README.md)
 
 
 ## Examples
