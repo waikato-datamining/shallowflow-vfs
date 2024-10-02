@@ -36,7 +36,7 @@ setup(
     install_requires=[
         "shallowflow-cv2",
         "shallowflow-redis",
-        "opex",
+        "fast-opex",
     ],
     entry_points={
         "class_lister": [
