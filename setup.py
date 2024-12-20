@@ -13,7 +13,7 @@ def _read(f):
 
 
 setup(
-    name="shallowflow-vfs",
+    name="shallowflow_vfs",
     description="Plugins for the shallowflow workflow engine that allows making decisions on whether keep or discard video frames.",
     long_description=(
         _read('DESCRIPTION.rst') + b'\n' +
@@ -34,8 +34,8 @@ setup(
         "shallowflow",
     ],
     install_requires=[
-        "shallowflow-cv2",
-        "shallowflow-redis",
+        "shallowflow_cv2",
+        "shallowflow_redis",
         "fast-opex",
     ],
     entry_points={
